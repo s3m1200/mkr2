@@ -1,22 +1,25 @@
 package com.epam.rd.autocode.assestment.basics.entity;
-import java.math.BigDecimal;
+
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Objects;
-public class Employee {
+
+class Employee extends User {
     private String phone;
     private LocalDate birthDate;
 
+    // Default constructor
     public Employee() {
         super();
     }
 
+    // Parameterized constructor
     public Employee(long id, String email, String password, String name, String phone, LocalDate birthDate) {
         super(id, email, password, name);
         this.phone = phone;
         this.birthDate = birthDate;
     }
 
+    // Getters and setters
     public String getPhone() {
         return phone;
     }
@@ -33,6 +36,7 @@ public class Employee {
         this.birthDate = birthDate;
     }
 
+    // equals and hashCode
     @Override
     public boolean equals(Object o) {
         if (!super.equals(o)) return false;
@@ -45,11 +49,16 @@ public class Employee {
     public int hashCode() {
         return Objects.hash(super.hashCode(), phone, birthDate);
     }
+
+    // toString
     @Override
     public String toString() {
         return "Employee{" +
-                "phone='" + phone + '\'' +
-                ", birthDate=" + birthDate +
-                "} " + super.toString();
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", dateOfBirth=" + birthDate +
+                '}';
     }
 }

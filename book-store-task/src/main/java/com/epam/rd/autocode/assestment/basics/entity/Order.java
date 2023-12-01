@@ -1,9 +1,10 @@
 package com.epam.rd.autocode.assestment.basics.entity;
+
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
-public class Order{
+
+class Order {
     private long id;
     private long clientId;
     private long employeeId;
@@ -12,8 +13,10 @@ public class Order{
     private LocalDateTime orderDate;
     private BigDecimal price;
 
+    // Default constructor
     public Order() {}
 
+    // Parameterized constructor
     public Order(long id, long clientId, long employeeId, long bookId, int numberOfBooks,
                  LocalDateTime orderDate, BigDecimal price) {
         this.id = id;
@@ -25,6 +28,7 @@ public class Order{
         this.price = price;
     }
 
+    // Getters and setters
     public long getId() { return id; }
     public void setId(long id) { this.id = id; }
 
@@ -46,6 +50,7 @@ public class Order{
     public BigDecimal getPrice() { return price; }
     public void setPrice(BigDecimal price) { this.price = price; }
 
+    // equals and hashCode
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -65,6 +70,7 @@ public class Order{
         return Objects.hash(id, clientId, employeeId, bookId, numberOfBooks, orderDate, price);
     }
 
+    // toString
     @Override
     public String toString() {
         return "Order{" +

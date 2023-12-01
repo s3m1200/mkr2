@@ -1,21 +1,25 @@
 package com.epam.rd.autocode.assestment.basics.entity;
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+
 import java.util.Objects;
+
 public class User{
     protected long id;
     protected String email;
     protected String password;
     protected String name;
 
+    // Default constructor
     public User() {}
+
+    // Parameterized constructor
     public User(long id, String email, String password, String name) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.name = name;
     }
+
+    // Getters and setters
     public long getId() {
         return id;
     }
@@ -29,7 +33,6 @@ public class User{
     }
 
     public void setEmail(String email) {
-
         this.email = email;
     }
 
@@ -48,6 +51,8 @@ public class User{
     public void setName(String name) {
         this.name = name;
     }
+
+    // equals and hashCode
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -63,6 +68,8 @@ public class User{
     public int hashCode() {
         return Objects.hash(id, email, password, name);
     }
+
+    // toString
     @Override
     public String toString() {
         return "User{" +

@@ -1,9 +1,13 @@
 package com.epam.rd.autocode.assestment.basics.entity;
+
+import com.epam.rd.autocode.assestment.basics.entity.enums.AgeGroup;
+import com.epam.rd.autocode.assestment.basics.entity.enums.Language;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Objects;
-public class Book {
+
+class Book {
     private long id;
     private String name;
     private String genre;
@@ -15,8 +19,12 @@ public class Book {
     private String characteristics;
     private String description;
     private Language language;
-    public Book() {}
 
+    // Default constructor
+    public Book() {
+    }
+
+    // Parameterized constructor
     public Book(long id, String name, String genre, AgeGroup ageGroup, BigDecimal price,
                 LocalDate publicationYear, String author, int numberOfPages,
                 String characteristics, String description, Language language) {
@@ -32,39 +40,97 @@ public class Book {
         this.description = description;
         this.language = language;
     }
-    public long getId() { return id; }
-    public void setId(long id) { this.id = id; }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    // Getters and setters
+    public long getId() {
+        return id;
+    }
 
-    public String getGenre() { return genre; }
-    public void setGenre(String genre) { this.genre = genre; }
+    public void setId(long id) {
+        this.id = id;
+    }
 
-    public AgeGroup getAgeGroup() { return ageGroup; }
-    public void setAgeGroup(AgeGroup ageGroup) { this.ageGroup = ageGroup; }
+    public String getName() {
+        return name;
+    }
 
-    public BigDecimal getPrice() { return price; }
-    public void setPrice(BigDecimal price) { this.price = price; }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public LocalDate getPublicationYear() { return publicationYear; }
-    public void setPublicationYear(LocalDate publicationYear) { this.publicationYear = publicationYear; }
+    public String getGenre() {
+        return genre;
+    }
 
-    public String getAuthor() { return author; }
-    public void setAuthor(String author) { this.author = author; }
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
 
-    public int getNumberOfPages() { return numberOfPages; }
-    public void setNumberOfPages(int numberOfPages) { this.numberOfPages = numberOfPages; }
+    public AgeGroup getAgeGroup() {
+        return ageGroup;
+    }
 
-    public String getCharacteristics() { return characteristics; }
-    public void setCharacteristics(String characteristics) { this.characteristics = characteristics; }
+    public void setAgeGroup(AgeGroup ageGroup) {
+        this.ageGroup = ageGroup;
+    }
 
-    public String getDescription() { return description; }
-    public void setDescription(String description) { this.description = description; }
+    public BigDecimal getPrice() {
+        return price;
+    }
 
-    public Language getLanguage() { return language; }
-    public void setLanguage(Language language) { this.language = language; }
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
 
+    public LocalDate getPublicationYear() {
+        return publicationYear;
+    }
+
+    public void setPublicationYear(LocalDate publicationYear) {
+        this.publicationYear = publicationYear;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public int getNumberOfPages() {
+        return numberOfPages;
+    }
+
+    public void setNumberOfPages(int numberOfPages) {
+        this.numberOfPages = numberOfPages;
+    }
+
+    public String getCharacteristics() {
+        return characteristics;
+    }
+
+    public void setCharacteristics(String characteristics) {
+        this.characteristics = characteristics;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Language getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(Language language) {
+        this.language = language;
+    }
+
+    // equals and hashCode
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -88,19 +154,20 @@ public class Book {
         return Objects.hash(id, name, genre, ageGroup, price, publicationYear, author, numberOfPages, characteristics, description, language);
     }
 
+    // toString
     @Override
     public String toString() {
         return "Book{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", genre='" + genre + '\'' +
+                ", name=" + name +
+                ", genre=" + genre +
                 ", ageGroup=" + ageGroup +
                 ", price=" + price +
                 ", publicationYear=" + publicationYear +
-                ", author='" + author + '\'' +
+                ", author=" + author +
                 ", numberOfPages=" + numberOfPages +
-                ", characteristics='" + characteristics + '\'' +
-                ", description='" + description + '\'' +
+                ", characteristics=" + characteristics +
+                ", description=" + description +
                 ", language=" + language +
                 '}';
     }
